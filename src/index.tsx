@@ -1,16 +1,43 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import theme from './muiTheme';
+import { CssBaseline } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
+
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ThemeProvider theme={theme}>
+    <CssBaseline />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
