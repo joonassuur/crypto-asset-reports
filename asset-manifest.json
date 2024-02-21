@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/joonassuur/crypto-asset-reports/static/js/main.78e4cfc5.js",
-    "static/js/453.e788c00b.chunk.js": "/joonassuur/crypto-asset-reports/static/js/453.e788c00b.chunk.js",
-    "index.html": "/joonassuur/crypto-asset-reports/index.html",
-    "main.78e4cfc5.js.map": "/joonassuur/crypto-asset-reports/static/js/main.78e4cfc5.js.map",
-    "453.e788c00b.chunk.js.map": "/joonassuur/crypto-asset-reports/static/js/453.e788c00b.chunk.js.map"
+    "main.js": "/crypto-asset-reports/static/js/main.0a291c9f.js",
+    "static/js/453.e788c00b.chunk.js": "/crypto-asset-reports/static/js/453.e788c00b.chunk.js",
+    "index.html": "/crypto-asset-reports/index.html",
+    "main.0a291c9f.js.map": "/crypto-asset-reports/static/js/main.0a291c9f.js.map",
+    "453.e788c00b.chunk.js.map": "/crypto-asset-reports/static/js/453.e788c00b.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.78e4cfc5.js"
+    "static/js/main.0a291c9f.js"
   ]
 }
