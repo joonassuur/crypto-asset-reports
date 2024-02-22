@@ -27,7 +27,7 @@ monthAgo.setDate(monthAgo.getDate() - 31);
 yearAgo.setDate(monthAgo.getDate() - 365);
 
 const development = process.env.NODE_ENV === 'development';
-const rootURL = development ? '/' : '/crypto-asset-reports';
+const rootURL = development ? '/' : '/crypto-asset-reports/';
 
 export {
   roundToTwoDecimals,
