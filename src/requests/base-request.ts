@@ -1,5 +1,8 @@
 import axios, { Method, ResponseType } from 'axios';
-const BASE_URL = 'http://localhost:3000/';
+import { development } from '../utils/helpers';
+const BASE_URL = development
+  ? 'http://localhost:3000/'
+  : 'https://sweet-druid-55fefd.netlify.app/.netlify/functions/api/';
 
 interface RequestPayload {
   method: Method;
