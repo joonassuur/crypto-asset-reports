@@ -3,11 +3,15 @@ import { Typography, Grid, Card, CardContent } from '@mui/material';
 import ExchangeContacts from './ExchangeContacts';
 import { roundToTwoDecimals } from '../utils/helpers';
 import { faker } from '@faker-js/faker';
+import {
+  ExchangeAsset,
+  ExchangeDetails as ExchangeDetailsType,
+} from '../utils/types';
 import { useParams } from 'react-router-dom';
 
 interface Props {
-  exchangeDetails: any;
-  exchangeAssets: any;
+  exchangeDetails: ExchangeDetailsType;
+  exchangeAssets: ExchangeAsset[];
 }
 
 function calculateTotalAssets(exchangeAssets: any) {
@@ -26,7 +30,7 @@ function ExchangeDetails({ exchangeDetails, exchangeAssets }: Props) {
       <Grid item container xs flexGrow="0!important" alignItems="flex-start">
         <ExchangeContacts exchangeDetails={exchangeDetails} />
       </Grid>
-      <Grid item container xs={12} lg={8}>
+      <Grid item container xs={12} lg={7} xl={6}>
         <Grid item container xs={12}>
           <Card sx={{ width: '100%' }}>
             <CardContent

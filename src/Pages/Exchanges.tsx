@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import { fetchExchanges, fetchExchangeQuotes } from '../requests/requests';
-import { Exchange } from '../utils/types';
+import { Exchange, ExchangeQuotes } from '../utils/types';
 import { Typography, CircularProgress } from '@mui/material';
 import { sevenDaysAgo } from '../utils/helpers';
 import ExchangesList from '../components/ExchangesList';
@@ -9,7 +9,9 @@ import ExchangesList from '../components/ExchangesList';
 function Exchanges() {
   const [loading, setLoading] = useState(true);
   const [exchanges, setExchanges] = useState<Exchange[]>([]);
-  const [exchangeQuotes, setExchangeQuotes] = useState<any>();
+  const [exchangeQuotes, setExchangeQuotes] = useState<ExchangeQuotes | null>(
+    null
+  );
 
   useEffect(() => {
     (async () => {

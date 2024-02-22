@@ -1,5 +1,13 @@
 import baseRequest from './base-request';
-import { Coin, Exchange } from '../utils/types';
+import {
+  Coin,
+  Exchange,
+  ExchangeAsset,
+  ExchangeDetails,
+  Symbol,
+  AutocompleteResult,
+  ExchangeQuotes,
+} from '../utils/types';
 
 const fetchExchanges = async (): Promise<Exchange[] | null> => {
   try {
@@ -41,7 +49,7 @@ const fetchQuote = async ({
   symbol: string;
   start: string;
   end: string;
-}): Promise<any | null> => {
+}): Promise<Symbol | null> => {
   try {
     const { status, data } = await baseRequest({
       method: 'GET',
@@ -67,7 +75,7 @@ const fetchExchangeQuotes = async ({
   start: string;
   end: string;
   interval: string;
-}): Promise<any | null> => {
+}): Promise<ExchangeQuotes | null> => {
   try {
     const { status, data } = await baseRequest({
       method: 'GET',
@@ -83,7 +91,9 @@ const fetchExchangeQuotes = async ({
   return null;
 };
 
-const fetchExchangeAssets = async (id: string): Promise<any | null> => {
+const fetchExchangeAssets = async (
+  id: string
+): Promise<{ [key: string]: ExchangeAsset[] } | null> => {
   try {
     const { status, data } = await baseRequest({
       method: 'GET',
@@ -99,13 +109,16 @@ const fetchExchangeAssets = async (id: string): Promise<any | null> => {
   return null;
 };
 
-const fetchExchangeDetails = async (id: string): Promise<any | null> => {
+const fetchExchangeDetails = async (
+  id: string
+): Promise<{ [key: string]: ExchangeDetails } | null> => {
   try {
     const { status, data } = await baseRequest({
       method: 'GET',
       path: `/exchange-details?id=${id}`,
     });
     if (status === 200) {
+      console.log(data);
       return data;
     }
   } catch (e) {
@@ -133,7 +146,9 @@ const fetchCoinDetails = async (
   return null;
 };
 
-const fetchAutocomplete = async (keyword: string): Promise<any | null> => {
+const fetchAutocomplete = async (
+  keyword: string
+): Promise<AutocompleteResult | null> => {
   try {
     const { status, data } = await baseRequest({
       method: 'POST',

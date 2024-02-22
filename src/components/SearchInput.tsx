@@ -3,18 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import { fetchAutocomplete } from '../requests/requests';
+import { Token } from '../utils/types';
 import CircularProgress from '@mui/material/CircularProgress';
-
-interface Token {
-  category: string;
-  id: number;
-  is_active: 0;
-  is_listed: 0;
-  name: string;
-  rank: number;
-  slug: string;
-  symbol: string;
-}
 
 export default function SearchInput() {
   const navigate = useNavigate();

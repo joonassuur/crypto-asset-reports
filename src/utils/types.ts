@@ -15,11 +15,64 @@ interface Price {
   timestamp: string;
 }
 
+interface Token {
+  category: string;
+  id: number;
+  is_active: 0;
+  is_listed: 0;
+  name: string;
+  rank: number;
+  slug: string;
+  symbol: string;
+}
+
 interface Quote {
   quote: {
     USD: Price;
   };
   timestamp: string;
+}
+
+interface ExchangeAsset {
+  wallet_address: string;
+  balance: number;
+  platform: {
+    crypto_id: number;
+    symbol: string;
+    name: string;
+  };
+  currency: {
+    crypto_id: number;
+    price_usd: number;
+    symbol: string;
+    name: string;
+  };
+}
+
+interface ExchangeDetails {
+  id: number;
+  name: string;
+  slug: string;
+  logo: string;
+  description: string;
+  date_launched: string;
+  notice: null;
+  countries: never[];
+  fiats: string[];
+  tags: null;
+  type: null;
+  maker_fee: number;
+  taker_fee: number;
+  weekly_visits: number;
+  spot_volume_usd: number;
+  spot_volume_last_updated: string;
+  urls: {
+    website: string[];
+    twitter: string[];
+    blog: never[];
+    chat: string[];
+    fee: string[];
+  };
 }
 
 interface Exchange {
@@ -60,6 +113,24 @@ interface Symbol {
   };
 }
 
+interface ExchangeQuotes {
+  [key: string]: {
+    quotes: Quote[];
+    id: number;
+    name: string;
+    slug: string;
+  };
+}
+
+interface AutocompleteResult {
+  suggestions: [
+    never,
+    {
+      tokens: Token[];
+    }
+  ];
+}
+
 interface Coin {
   id: string;
   symbol: string;
@@ -78,4 +149,15 @@ interface Coin {
   total_supply: number;
 }
 
-export type { Route, Coin, Quote, Symbol, Exchange };
+export type {
+  Route,
+  Coin,
+  Quote,
+  Symbol,
+  Exchange,
+  ExchangeAsset,
+  ExchangeDetails,
+  Token,
+  ExchangeQuotes,
+  AutocompleteResult,
+};

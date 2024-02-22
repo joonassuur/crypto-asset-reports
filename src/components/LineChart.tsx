@@ -3,7 +3,6 @@ import { format } from 'date-fns';
 import { fetchQuote } from '../requests/requests';
 import { Symbol, Quote } from '../utils/types';
 import { Line } from 'react-chartjs-2';
-import { Box } from '@mui/material';
 
 export const chartOptions = {
   responsive: true,

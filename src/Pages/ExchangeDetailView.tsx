@@ -4,6 +4,10 @@ import { Breadcrumbs, Typography, Link, CircularProgress } from '@mui/material';
 import { rootURL } from '../utils/helpers';
 import ExchangeDetails from '../components/ExchangeDetails';
 import {
+  ExchangeAsset,
+  ExchangeDetails as ExchangeDetailsType,
+} from '../utils/types';
+import {
   fetchExchangeDetails,
   fetchExchangeAssets,
 } from '../requests/requests';
@@ -11,8 +15,12 @@ import {
 function ExchangeDetailView() {
   const { id } = useParams();
   const [loading, setLoading] = useState<boolean>(false);
-  const [exchangeDetails, setExchangeDetails] = useState<any>(null);
-  const [exchangeAssets, setExchangeAssetsResponse] = useState<any>(null);
+  const [exchangeDetails, setExchangeDetails] = useState<{
+    [key: string]: ExchangeDetailsType;
+  } | null>(null);
+  const [exchangeAssets, setExchangeAssetsResponse] = useState<{
+    [key: string]: ExchangeAsset[];
+  } | null>(null);
 
   useEffect(() => {
     (async () => {
