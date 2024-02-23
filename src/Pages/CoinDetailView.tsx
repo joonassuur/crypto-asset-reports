@@ -62,12 +62,14 @@ function CoinDetailView() {
 
   return (
     <>
-      <Breadcrumbs aria-label="breadcrumb" sx={{ mb: '24px' }}>
-        <Link component={RouterLink} to={`${rootURL}cryptocurrencies`}>
-          Cryptocurrencies
-        </Link>
-        <Typography color="text.primary">{id}</Typography>
-      </Breadcrumbs>
+      <nav aria-label="Breadcrumb navigation">
+        <Breadcrumbs sx={{ mb: '24px' }}>
+          <Link component={RouterLink} to={`${rootURL}cryptocurrencies`}>
+            Cryptocurrencies
+          </Link>
+          <Typography color="text.primary">{id}</Typography>
+        </Breadcrumbs>
+      </nav>
       <Box
         display="flex"
         flexDirection="column"
@@ -82,11 +84,13 @@ function CoinDetailView() {
           <Box width="100%">
             <Box display="flex" justifyContent="space-between" m="12px 0">
               <CustomTabs
+                variant="metric tabs"
                 tabs={chartType}
                 value={selectedChartType}
                 handleChange={handleChartTypeChange}
               />
               <CustomTabs
+                variant="time period tabs"
                 tabs={dateRanges}
                 value={selectedTimeFrame}
                 handleChange={handleTimeframeChange}

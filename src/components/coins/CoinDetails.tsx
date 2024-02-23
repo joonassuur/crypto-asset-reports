@@ -75,7 +75,12 @@ function CoinDetails() {
   if (!id || !coinDetails || !coinDetails[id]) return null;
   const coinDetailsKey = coinDetails[id.toUpperCase()];
   return (
-    <Box display="flex" alignItems="flex-end" mb="12px">
+    <Box
+      display="flex"
+      alignItems="flex-end"
+      mb="12px"
+      aria-label={`${coinDetails[id]} details`}
+    >
       <Card sx={{ ml: '12px', width: { xs: '100%', xl: '60%' } }}>
         <CardContent
           sx={{
@@ -153,18 +158,21 @@ function CoinDetails() {
             icon={<Language />}
             label="Website"
             onClick={() => {}}
+            clickable
           />
           <Chip
             size="small"
             icon={<InsertDriveFileOutlined />}
             label="Whitepaper"
             onClick={() => {}}
+            clickable
           />
           <Chip
             size="small"
             icon={<GitHub />}
             label="GitHub"
             onClick={() => {}}
+            clickable
           />
         </CardActions>
       </Card>

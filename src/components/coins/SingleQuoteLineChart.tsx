@@ -83,7 +83,14 @@ function SingleQuoteLineChart({
   };
 
   if (!quote) return <div>Loading...</div>;
-  return <Line height={110} options={chartOptions} data={data} />;
+  return (
+    <Line
+      aria-label="quote chart"
+      height={110}
+      options={chartOptions}
+      data={data}
+    />
+  );
 }
 
 export default SingleQuoteLineChart;

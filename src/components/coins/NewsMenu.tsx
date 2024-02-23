@@ -29,6 +29,7 @@ function NewsMenu({ id }: { id: string }) {
   return (
     <Drawer
       anchor="right"
+      aria-label="News Menu"
       variant="permanent"
       sx={{
         zIndex: 1,

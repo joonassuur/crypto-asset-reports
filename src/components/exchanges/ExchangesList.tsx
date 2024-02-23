@@ -76,7 +76,11 @@ interface Props {
 function ExchangesList({ exchanges, exchangeQuotes }: Props) {
   return (
     <TableContainer>
-      <Table sx={{ minWidth: 650 }} aria-label="exchanges table">
+      <Table
+        sx={{ minWidth: 650 }}
+        aria-label="exchanges table"
+        summary="Exchanges List"
+      >
         <TableHead>
           <TableRow>
             <TableCell>#</TableCell>

@@ -2,12 +2,6 @@ import React from 'react';
 import { Button, FormControl, ButtonGroup } from '@mui/material';
 import { colors } from '../../muiTheme';
 
-interface Props {
-  value: string;
-  tabs: string[];
-  handleChange: (offerType: string) => void;
-}
-
 const buttonGroupStyle = {
   color: colors.primary,
   textTransform: 'none',
@@ -19,13 +13,20 @@ const selectedButtonGroupStyle = {
   textTransform: 'none',
 };
 
-function CustomTabs({ tabs, value, handleChange }: Props) {
+interface Props {
+  value: string;
+  tabs: string[];
+  handleChange: (offerType: string) => void;
+  variant?: string;
+}
+
+function CustomTabs({ tabs, value, handleChange, variant }: Props) {
   return (
     <FormControl sx={{ marginTop: 0 }}>
       <ButtonGroup
         size="small"
         variant="outlined"
-        aria-label="small outlined button group"
+        aria-label={variant || 'tab group'}
       >
         {tabs.map((tab) => {
           return (

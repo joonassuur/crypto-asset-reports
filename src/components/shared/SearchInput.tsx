@@ -40,7 +40,7 @@ export default function SearchInput() {
         setInputValue(newInputValue);
       }}
       size="small"
-      id="asynchronous-demo"
+      id="token-search-input"
       sx={{
         width: 300,
         '& .MuiInputBase-root': {
@@ -84,6 +84,7 @@ export default function SearchInput() {
                 {params.InputProps.endAdornment}
               </React.Fragment>
             ),
+            'aria-label': 'Search coin',
           }}
         />
       )}

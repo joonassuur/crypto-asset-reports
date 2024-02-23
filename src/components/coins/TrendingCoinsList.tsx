@@ -22,7 +22,11 @@ interface Props {
 function TrendingCoinsList({ coins }: Props) {
   return (
     <TableContainer>
-      <Table sx={{ minWidth: 650 }} aria-label="coins table">
+      <Table
+        sx={{ minWidth: 650 }}
+        aria-label="coins table"
+        summary="Trending Coins List"
+      >
         <TableHead>
           <TableRow>
             <TableCell>Name</TableCell>

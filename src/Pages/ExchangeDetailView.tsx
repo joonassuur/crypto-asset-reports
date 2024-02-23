@@ -41,8 +41,8 @@ function ExchangeDetailView() {
 
   if (loading) return <CircularProgress />;
   return !id || !exchangeDetails || !exchangeAssets ? null : (
-    <>
-      <Breadcrumbs aria-label="breadcrumb" sx={{ mb: '24px' }}>
+    <nav aria-label="Breadcrumb navigation">
+      <Breadcrumbs sx={{ mb: '24px' }}>
         <Link component={RouterLink} to={`${rootURL}exchanges`}>
           Exchanges
         </Link>
@@ -54,7 +54,7 @@ function ExchangeDetailView() {
         exchangeAssets={exchangeAssets?.[id]}
         exchangeDetails={exchangeDetails?.[id]}
       />
-    </>
+    </nav>
   );
 }
 

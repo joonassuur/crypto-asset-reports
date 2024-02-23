@@ -18,6 +18,7 @@ const imageAvatar = faker.image.avatar();
 function ExchangeContacts({ exchangeDetails }: { exchangeDetails: any }) {
   return (
     <List
+      aria-label="contact details"
       dense
       disablePadding
       sx={{

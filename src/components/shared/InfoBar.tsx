@@ -15,7 +15,7 @@ const fearGreed = faker.finance.amount({ min: 0, max: 100 });
 
 function InfoBar() {
   return (
-    <Box mb="24px">
+    <Box mb="24px" aria-label="info bar">
       <Divider sx={{ mb: '8px' }} />
       <Box
         display="flex"
