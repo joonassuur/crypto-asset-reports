@@ -19,7 +19,6 @@ import {
 interface Props {
   coins: { [key: string]: Coin };
 }
-
 function TrendingCoinsList({ coins }: Props) {
   return (
     <TableContainer>

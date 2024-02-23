@@ -47,6 +47,7 @@ function CoinDetailsListTitem({
   );
 }
 
+const imageAvatar = faker.image.avatar();
 function CoinDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -71,7 +72,9 @@ function CoinDetails() {
   }, [id, navigate]);
 
   if (loading) return <CircularProgress />;
-  return !id || !coinDetails || !coinDetails[id] ? null : (
+  if (!id || !coinDetails || !coinDetails[id]) return null;
+  const coinDetailsKey = coinDetails[id.toUpperCase()];
+  return (
     <Box display="flex" alignItems="flex-end" mb="12px">
       <Card sx={{ ml: '12px', width: { xs: '100%', xl: '60%' } }}>
         <CardContent
@@ -96,13 +99,13 @@ function CoinDetails() {
                   <Box display="flex" justifyContent="space-between">
                     <Typography variant="h6" display="flex" alignItems="center">
                       <Avatar
-                        alt={coinDetails[id.toUpperCase()]?.symbol}
-                        src={faker.image.avatar()}
+                        alt={coinDetailsKey?.symbol}
+                        src={imageAvatar}
                         sx={{ marginRight: '12px' }}
                       />
-                      {coinDetails[id.toUpperCase()]?.symbol}{' '}
+                      {coinDetailsKey?.symbol}{' '}
                       {`$${roundToTwoDecimals(
-                        coinDetails[id.toUpperCase()]?.quote?.USD.price
+                        coinDetailsKey?.quote?.USD.price
                       )}`}
                     </Typography>
                   </Box>
@@ -111,19 +114,15 @@ function CoinDetails() {
             </ListItem>
             <CoinDetailsListTitem
               label="Market cap"
-              value={roundToTwoDecimals(
-                coinDetails[id.toUpperCase()]?.quote?.USD.market_cap
-              )}
+              value={roundToTwoDecimals(coinDetailsKey?.quote?.USD.market_cap)}
             />
             <CoinDetailsListTitem
               label="Volume (24h)"
-              value={roundToTwoDecimals(
-                coinDetails[id.toUpperCase()]?.quote?.USD.volume_24h
-              )}
+              value={roundToTwoDecimals(coinDetailsKey?.quote?.USD.volume_24h)}
             />
             <CoinDetailsListTitem
               label="Circulating supply"
-              value={coinDetails[id.toUpperCase()]?.circulating_supply}
+              value={coinDetailsKey?.circulating_supply}
             />
           </List>
           <List
@@ -136,17 +135,15 @@ function CoinDetails() {
           >
             <CoinDetailsListTitem
               label="Total supply"
-              value={coinDetails[id.toUpperCase()]?.total_supply}
+              value={coinDetailsKey?.total_supply}
             />
             <CoinDetailsListTitem
               label="Max. supply"
-              value={coinDetails[id.toUpperCase()]?.max_supply}
+              value={coinDetailsKey?.max_supply}
             />
             <CoinDetailsListTitem
               label="Fully diluted market cap"
-              value={roundToTwoDecimals(
-                coinDetails[id.toUpperCase()]?.quote?.USD.volume_24h
-              )}
+              value={roundToTwoDecimals(coinDetailsKey?.quote?.USD.volume_24h)}
             />
           </List>
         </CardContent>

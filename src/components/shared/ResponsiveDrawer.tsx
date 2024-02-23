@@ -50,7 +50,7 @@ export default function ResponsiveDrawer({
           background: colors.primary,
         }}
       >
-        <Typography variant="h6" color="secondary">
+        <Typography variant="h6" color="white">
           Company Name
         </Typography>
       </Toolbar>

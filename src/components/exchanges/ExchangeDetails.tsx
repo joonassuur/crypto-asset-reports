@@ -22,7 +22,8 @@ function calculateTotalAssets(exchangeAssets: any) {
   }
   return totalAssets;
 }
-
+const fakerParagraph1 = faker.lorem.paragraphs(5);
+const fakerParagraph2 = faker.lorem.paragraphs(3);
 function ExchangeDetails({ exchangeDetails, exchangeAssets }: Props) {
   const { id } = useParams();
   return !id ? null : (
@@ -56,11 +57,11 @@ function ExchangeDetails({ exchangeDetails, exchangeAssets }: Props) {
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h6">About {exchangeDetails.name}</Typography>
-          <Typography variant="body1">{faker.lorem.paragraphs(5)}</Typography>
+          <Typography variant="body1">{fakerParagraph1}</Typography>
           <Typography variant="h6" mt="12px">
             Who are {exchangeDetails.name} founders?
           </Typography>
-          <Typography variant="body1">{faker.lorem.paragraphs(3)}</Typography>
+          <Typography variant="body1">{fakerParagraph2}</Typography>
         </Grid>
       </Grid>
     </Grid>

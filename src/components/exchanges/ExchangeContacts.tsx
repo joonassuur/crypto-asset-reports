@@ -14,6 +14,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { faker } from '@faker-js/faker';
 
+const imageAvatar = faker.image.avatar();
 function ExchangeContacts({ exchangeDetails }: { exchangeDetails: any }) {
   return (
     <List
@@ -37,7 +38,7 @@ function ExchangeContacts({ exchangeDetails }: { exchangeDetails: any }) {
                 >
                   <Avatar
                     alt={exchangeDetails.name}
-                    src={faker.image.avatar()}
+                    src={imageAvatar}
                     sx={{ marginRight: '12px' }}
                   />
                   {exchangeDetails.name}

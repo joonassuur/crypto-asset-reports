@@ -35,6 +35,13 @@ export const themeObject: ThemeOptions = {
     },
   },
   components: {
+    MuiToolbar: {
+      styleOverrides: {
+        root: {
+          minHeight: '48px!important',
+        },
+      },
+    },
     MuiLink: {
       styleOverrides: {
         root: {
@@ -92,6 +99,7 @@ export const themeObject: ThemeOptions = {
           color: 'black',
         },
         h6: {
+          fontSize: '18px',
           color: colors.tertiary,
         },
       },
