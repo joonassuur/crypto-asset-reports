@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/crypto-asset-reports/static/js/main.e0c2e84f.js",
+    "main.js": "/crypto-asset-reports/static/js/main.3a0e1b4c.js",
     "static/js/453.e788c00b.chunk.js": "/crypto-asset-reports/static/js/453.e788c00b.chunk.js",
     "index.html": "/crypto-asset-reports/index.html",
-    "main.e0c2e84f.js.map": "/crypto-asset-reports/static/js/main.e0c2e84f.js.map",
+    "main.3a0e1b4c.js.map": "/crypto-asset-reports/static/js/main.3a0e1b4c.js.map",
     "453.e788c00b.chunk.js.map": "/crypto-asset-reports/static/js/453.e788c00b.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.e0c2e84f.js"
+    "static/js/main.3a0e1b4c.js"
   ]
 }
