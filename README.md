@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-It's hosted live on [https://github.com/facebook/create-react-app](https://joonassuur.github.io/crypto-asset-reports/), but it can also be ran locally following the steps below.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). \
+It's hosted live on [https://github.com/facebook/create-react-app](https://joonassuur.github.io/crypto-asset-reports/), but it can also be ran locally following the steps below. \
 In case the project is ran locally, it would also use the local version of the backend, which can be accessed [here:](https://github.com/joonassuur/crypto-asset-reports-be)
 
 ## Available Scripts
