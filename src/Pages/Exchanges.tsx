@@ -4,7 +4,7 @@ import { fetchExchanges, fetchExchangeQuotes } from '../requests/requests';
 import { Exchange, ExchangeQuotes } from '../utils/types';
 import { Typography, CircularProgress } from '@mui/material';
 import { sevenDaysAgo } from '../utils/helpers';
-import ExchangesList from '../components/ExchangesList';
+import ExchangesList from '../components/exchanges/ExchangesList';
 
 function Exchanges() {
   const [loading, setLoading] = useState(true);

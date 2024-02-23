@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-import { fetchAutocomplete } from '../requests/requests';
-import { Token } from '../utils/types';
+import { fetchAutocomplete } from '../../requests/requests';
+import { Token } from '../../utils/types';
 import CircularProgress from '@mui/material/CircularProgress';
 
 export default function SearchInput() {
@@ -56,7 +56,7 @@ export default function SearchInput() {
       }}
       onChange={(event, newValue: Token | null) => {
         if (!newValue) return;
-        navigate(`/cryptocurrencies/${newValue.symbol}`);
+        navigate(`/cryptocurrencies/${newValue.symbol.toUpperCase()}`);
       }}
       isOptionEqualToValue={(option, value) => option.id === value.id}
       getOptionLabel={(option) => option.name}

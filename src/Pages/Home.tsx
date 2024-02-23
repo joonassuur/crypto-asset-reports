@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTrending } from '../requests/requests';
 import { Coin } from '../utils/types';
+import InfoBar from '../components/shared/InfoBar';
 import { Typography, CircularProgress } from '@mui/material';
-import TrendingCoinsList from '../components/TrendingCoinsList';
+import TrendingCoinsList from '../components/coins/TrendingCoinsList';
 
 function Home() {
   const [loading, setLoading] = useState(true);
@@ -28,6 +29,7 @@ function Home() {
     <div>No cryptocurrencies found from server</div>
   ) : (
     <div>
+      <InfoBar />
       <Typography variant="h6" mb="24px" fontWeight="bold">
         Cryptocurrencies
       </Typography>

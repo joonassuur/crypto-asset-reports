@@ -13,10 +13,10 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Menu, ShowChart, CurrencyBitcoin } from '@mui/icons-material';
 import Toolbar from '@mui/material/Toolbar';
-import { rootURL } from '../utils/helpers';
+import { rootURL } from '../../utils/helpers';
 import Typography from '@mui/material/Typography';
-import { colors } from '../muiTheme';
-import routes from '../utils/routes';
+import { colors } from '../../muiTheme';
+import routes from '../../utils/routes';
 
 const drawerWidth = 240;
 

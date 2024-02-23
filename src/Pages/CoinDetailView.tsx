@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { format } from 'date-fns';
 import { useParams, Link as RouterLink } from 'react-router-dom';
 import { Box, Typography, Breadcrumbs, Link } from '@mui/material';
-import CustomTabs from '../components/CustomTabs';
-import LineChart from '../components/LineChart';
-import CoinDetails from '../components/CoinDetails';
-import NewsMenu from '../components/NewsMenu';
+import CustomTabs from '../components/shared/CustomTabs';
+import SingleQuoteLineChart from '../components/coins/SingleQuoteLineChart';
+import CoinDetails from '../components/coins/CoinDetails';
+import NewsMenu from '../components/coins/NewsMenu';
 import {
   sevenDaysAgo,
   yesterday,
@@ -92,7 +92,7 @@ function CoinDetailView() {
                 handleChange={handleTimeframeChange}
               />
             </Box>
-            <LineChart
+            <SingleQuoteLineChart
               selectedChartType={selectedChartType}
               range={selectedTimeFrame}
               start={start}

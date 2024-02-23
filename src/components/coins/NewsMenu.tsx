@@ -7,7 +7,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { faker } from '@faker-js/faker';
-import { colors } from '../muiTheme';
+import { colors } from '../../muiTheme';
 
 interface NewsMenuItem {
   author: string;

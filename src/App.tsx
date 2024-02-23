@@ -4,7 +4,7 @@ import Home from './Pages/Home';
 import Exchanges from './Pages/Exchanges';
 import ExchangeDetailView from './Pages/ExchangeDetailView';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import ResponsiveDrawer from './components/ResponsiveDrawer';
+import ResponsiveDrawer from './components/shared/ResponsiveDrawer';
 import { rootURL } from './utils/helpers';
 
 function App() {

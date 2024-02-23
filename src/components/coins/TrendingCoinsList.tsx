@@ -7,13 +7,14 @@ import { Link, Avatar, Box } from '@mui/material';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { Coin } from '../utils/types';
+import { Coin } from '../../utils/types';
 import { faker } from '@faker-js/faker';
 import {
   roundToTwoDecimals,
   getTableValueColor,
   rootURL,
-} from '../utils/helpers';
+  getTableValueArrow,
+} from '../../utils/helpers';
 
 interface Props {
   coins: { [key: string]: Coin };
@@ -65,6 +66,9 @@ function TrendingCoinsList({ coins }: Props) {
                 sx={{
                   fontWeight: 'bold',
                   color: getTableValueColor(value.quote.USD.percent_change_1h),
+                  '&::before': getTableValueArrow(
+                    value.quote.USD.percent_change_1h
+                  ),
                 }}
               >
                 {roundToTwoDecimals(value.quote.USD.percent_change_1h)}%
@@ -73,6 +77,9 @@ function TrendingCoinsList({ coins }: Props) {
                 align="right"
                 sx={{
                   color: getTableValueColor(value.quote.USD.percent_change_24h),
+                  '&::before': getTableValueArrow(
+                    value.quote.USD.percent_change_24h
+                  ),
                 }}
               >
                 {roundToTwoDecimals(value.quote.USD.percent_change_24h)}%
@@ -81,6 +88,9 @@ function TrendingCoinsList({ coins }: Props) {
                 align="right"
                 sx={{
                   color: getTableValueColor(value.quote.USD.percent_change_7d),
+                  '&::before': getTableValueArrow(
+                    value.quote.USD.percent_change_7d
+                  ),
                 }}
               >
                 {roundToTwoDecimals(value.quote.USD.percent_change_7d)}%

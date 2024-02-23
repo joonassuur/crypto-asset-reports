@@ -7,14 +7,14 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import { Chip, Box, Avatar, Link } from '@mui/material';
-import { Exchange } from '../utils/types';
+import { Exchange } from '../../utils/types';
 import { Line } from 'react-chartjs-2';
 import { faker } from '@faker-js/faker';
 import {
   roundToTwoDecimals,
   convertRangeAndRound,
   rootURL,
-} from '../utils/helpers';
+} from '../../utils/helpers';
 
 const fiats = ['EUR', 'USD'];
 const getChipColor = (value: number) => {

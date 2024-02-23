@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { format } from 'date-fns';
-import { fetchQuote } from '../requests/requests';
-import { Symbol, Quote } from '../utils/types';
+import { fetchQuote } from '../../requests/requests';
+import { Symbol, Quote } from '../../utils/types';
 import { Line } from 'react-chartjs-2';
 
 export const chartOptions = {
@@ -37,7 +37,7 @@ const getChartData = (
   return data || [];
 };
 
-function LineChart({
+function SingleQuoteLineChart({
   id,
   range,
   selectedChartType,
@@ -86,4 +86,4 @@ function LineChart({
   return <Line height={110} options={chartOptions} data={data} />;
 }
 
-export default LineChart;
+export default SingleQuoteLineChart;

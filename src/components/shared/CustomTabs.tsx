@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, FormControl, ButtonGroup } from '@mui/material';
-import { colors } from '../muiTheme';
+import { colors } from '../../muiTheme';
 
 interface Props {
   value: string;

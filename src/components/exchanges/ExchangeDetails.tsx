@@ -1,12 +1,12 @@
 import React from 'react';
 import { Typography, Grid, Card, CardContent } from '@mui/material';
 import ExchangeContacts from './ExchangeContacts';
-import { roundToTwoDecimals } from '../utils/helpers';
+import { roundToTwoDecimals } from '../../utils/helpers';
 import { faker } from '@faker-js/faker';
 import {
   ExchangeAsset,
   ExchangeDetails as ExchangeDetailsType,
-} from '../utils/types';
+} from '../../utils/types';
 import { useParams } from 'react-router-dom';
 
 interface Props {

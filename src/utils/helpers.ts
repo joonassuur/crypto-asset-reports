@@ -17,6 +17,28 @@ function getTableValueColor(value: number) {
   return value <= 0.5 ? '#ea3943' : '#16c784';
 }
 
+function getTableValueArrow(value: number) {
+  return {
+    content: '""',
+    display: 'inline-block',
+    width: 0,
+    height: 0,
+    borderBottom:
+      value <= 0.5
+        ? '4px solid transparent'
+        : `4px solid ${getTableValueColor(value)}`,
+    borderRight: '4px solid transparent',
+    borderLeft: '4px solid transparent',
+    borderTop:
+      value <= 0.5
+        ? `4px solid ${getTableValueColor(value)}`
+        : '4px solid transparent',
+    marginRight: '8px',
+    position: 'relative',
+    top: value <= 0.5 ? '2px' : '-2px',
+  };
+}
+
 const yearAgo = new Date();
 const monthAgo = new Date();
 const sevenDaysAgo = new Date();
@@ -41,4 +63,5 @@ export {
   getTableValueColor,
   development,
   rootURL,
+  getTableValueArrow,
 };

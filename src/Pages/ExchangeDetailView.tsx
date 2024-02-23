@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link as RouterLink } from 'react-router-dom';
 import { Breadcrumbs, Typography, Link, CircularProgress } from '@mui/material';
 import { rootURL } from '../utils/helpers';
-import ExchangeDetails from '../components/ExchangeDetails';
+import ExchangeDetails from '../components/exchanges/ExchangeDetails';
 import {
   ExchangeAsset,
   ExchangeDetails as ExchangeDetailsType,
